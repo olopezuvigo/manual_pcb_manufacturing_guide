@@ -1,0 +1,118 @@
+\documentclass[a4paper]{article}
+
+
+% Esto es para que el LaTeX sepa que el texto está en español:
+\usepackage[english]{babel}
+\selectlanguage{english}
+
+% Esto es para poder escribir acentos directamente:
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Pa meter links y refs
+\usepackage[hidelinks, hyperindex=true,breaklinks=true,colorlinks=false,linkcolor=blue]{hyperref}
+\usepackage[all]{hypcap}    %for going to the top of an image when a figure reference is clicked
+
+%% Asigna un tamaño a la hoja y los márgenes
+\usepackage[
+top=1cm,
+bottom=2cm,
+left=3cm,
+right=2cm,
+headheight=12pt, % as per the warning by fancyhdr
+includehead,includefoot,
+heightrounded, % to avoid spurious underfull messages
+]{geometry} 
+
+%% Paquetes de la AMS
+\usepackage{amsmath, amsthm, amsfonts}
+%% Para añadir archivos con extensión pdf, jpg, png or tif
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{subfigure} % subfiguras
+
+\usepackage{xcolor}
+		\definecolor{docencia}{RGB}{237, 110, 0}
+%% Para colocar las imágenes donde queremos
+\usepackage{float}
+
+%%pal relleno
+\usepackage{lipsum}
+
+\newcommand*{\EncabezadoDTE}{%
+	\noindent%
+	\parbox{.5\textwidth}{%
+		\rule{0.5\textwidth}{0pt}\rule{0.5\textwidth}{0.5pt}\\
+		{\parbox[b][3em][t]{0.3\textwidth}{\includegraphics[width=0.2\textwidth]{figures/generic/logo_uvigo.png} \\ \large{\color{docencia}Departamento de \\ Tecnoloxía Electrónica}}}\\%
+		\rule{0.5\textwidth}{0pt}\rule{0.5\textwidth}{0.5pt}\\
+	}%
+}
+
+%% Paquete para pies y cabezas a las páginas
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\lhead{PCB manufacturing}
+\rhead{\begin{picture}(0,0)\put(-15,-3){\includegraphics[width=5mm]{figures/generic/GCode_logo.png}} \end{picture}}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{2pt}
+
+\voffset = -30pt
+
+\fancypagestyle{mypagestyle}{
+\lhead{\includegraphics[height=2cm]{figures/generic/GCode_logo.png}}
+\rhead{\includegraphics[width=0.2\textwidth]{figures/generic/logo_uvigo.png} \\ \large{\color{docencia}Departamento de \\ Tecnoloxía Electrónica} \vspace{5pt}}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+
+\headheight=10pt % as per the warning by fancyhdr
+\topmargin = 10pt
+}
+
+%\usepackage{refcheck}
+
+%Lenghts
+\newlength{\photoHeight}
+\photoHeight = 115 pt
+
+\newlength{\secondPhotoHeight}
+\secondPhotoHeight = 115 pt
+
+\newlength{\taladroHeight}
+\taladroHeight = 200 pt
+
+\newlength{\sosaHeight}
+\sosaHeight = 170 pt
+
+\newlength{\insolHeight}
+\insolHeight = 180 pt
+
+\newlength{\acidHeight}
+\acidHeight = 220 pt
+
+\newlength{\pcbsHeight}
+\pcbsHeight = 265 pt
+
+\newlength{\morepcbsHeight}
+\morepcbsHeight = 200 pt
+
+%%Definiciones para el autoref
+\def\figautorefname{Figure}
+\def\sectionautorefname{Section}
+
+%% Primero escribimos el título
+\title{\textbf{PCB manufacturing}}
+\author{Fernando Flores, Miguel salvatierra , Elena Rodríguez, Mateo González, Óscar López\\
+	\small fernandoflores@ieee.org, miguelsalvatierra@ieee.org, elenarlois@ieee.org, mateo@ieee.org, olopez@uvigo.es
+}
+
+\begin{document}
+
+	\maketitle
+	
+	\thispagestyle{mypagestyle}% changed from "empty"\\
+	
+	\input{manual_pcb_manufacturing_guide.tex}
+	
+\end{document}

@@ -1,0 +1,33 @@
+# LaTeX auxiliary and build files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.bcf
+*.run.xml
+*.glo
+*.gls
+*.glg
+*.ist
+*.idx
+*.ind
+*.ilg
+
+# Rebuildable output documents
+*.pdf
+*.dvi
+*.ps
+
+# Unused figure assets
+figures/generic/GCode_Logo_without_robotics.png
+figures/generic/logo_dte.jpg
