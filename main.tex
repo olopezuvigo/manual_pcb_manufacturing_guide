@@ -1,42 +1,42 @@
 \documentclass[a4paper]{article}
 
 
-% Esto es para que el LaTeX sepa que el texto está en español:
-\usepackage[english]{babel}
-\selectlanguage{english}
+% Language configuration (British English):
+\usepackage[british]{babel}
+\selectlanguage{british}
 
-% Esto es para poder escribir acentos directamente:
+% Input and font encodings:
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-%% Pa meter links y refs
+%% Hyperlinks and cross-references:
 \usepackage[hidelinks, hyperindex=true,breaklinks=true,colorlinks=false,linkcolor=blue]{hyperref}
-\usepackage[all]{hypcap}    %for going to the top of an image when a figure reference is clicked
+\usepackage[all]{hypcap}    % Navigate to the top of an image when a figure reference is clicked
 
-%% Asigna un tamaño a la hoja y los márgenes
+%% Page sizing and margin configuration:
 \usepackage[
 top=1cm,
 bottom=2cm,
 left=3cm,
 right=2cm,
-headheight=12pt, % as per the warning by fancyhdr
+headheight=12pt, % As per fancyhdr recommendation
 includehead,includefoot,
-heightrounded, % to avoid spurious underfull messages
+heightrounded, % Avoid spurious underfull messages
 ]{geometry} 
 
-%% Paquetes de la AMS
+%% AMS packages:
 \usepackage{amsmath, amsthm, amsfonts}
-%% Para añadir archivos con extensión pdf, jpg, png or tif
+%% Support for external graphic files (PDF, JPG, PNG, or TIFF):
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
-\usepackage{subfigure} % subfiguras
+\usepackage{subfigure} % Subfigures
 
 \usepackage{xcolor}
 		\definecolor{docencia}{RGB}{237, 110, 0}
-%% Para colocar las imágenes donde queremos
+%% Precise image positioning:
 \usepackage{float}
 
-%%pal relleno
+%% Dummy filler text:
 \usepackage{lipsum}
 
 \newcommand*{\EncabezadoDTE}{%
@@ -48,7 +48,7 @@ heightrounded, % to avoid spurious underfull messages
 	}%
 }
 
-%% Paquete para pies y cabezas a las páginas
+%% Running headers and footers:
 \usepackage{fancyhdr}
 
 \pagestyle{fancy}
@@ -66,13 +66,13 @@ heightrounded, % to avoid spurious underfull messages
 \renewcommand{\headrulewidth}{0pt}
 
 
-\headheight=10pt % as per the warning by fancyhdr
+\headheight=10pt % As per fancyhdr recommendation
 \topmargin = 10pt
 }
 
 %\usepackage{refcheck}
 
-%Lenghts
+% Lengths
 \newlength{\photoHeight}
 \photoHeight = 115 pt
 
@@ -97,11 +97,11 @@ heightrounded, % to avoid spurious underfull messages
 \newlength{\morepcbsHeight}
 \morepcbsHeight = 200 pt
 
-%%Definiciones para el autoref
+%% autoref name definitions:
 \def\figautorefname{Figure}
 \def\sectionautorefname{Section}
 
-%% Primero escribimos el título
+%% Title and author metadata:
 \title{\textbf{PCB manufacturing}}
 \author{Fernando Flores, Miguel salvatierra , Elena Rodríguez, Mateo González, Óscar López\\
 	\small fernandoflores@ieee.org, miguelsalvatierra@ieee.org, elenarlois@ieee.org, mateo@ieee.org, olopez@uvigo.es
@@ -111,7 +111,7 @@ heightrounded, % to avoid spurious underfull messages
 
 	\maketitle
 	
-	\thispagestyle{mypagestyle}% changed from "empty"\\
+	\thispagestyle{mypagestyle}% Changed from "empty"\\
 	
 	\input{manual_pcb_manufacturing_guide.tex}
 	

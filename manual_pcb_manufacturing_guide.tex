@@ -1,12 +1,12 @@
-%%----------------seda practica 2---------------------%%
+%%---------------- PCB Practical Assignment 2 ---------------------%%
 \begin{abstract}
-The aim of this report is being a brief help to make a home-made Printed Circuit Board (PCB) by insolation machine and acid, not with a Computer Numerical Control (CNC) machine. This report contains the steps from the end of the layout design to the components assembly. It will not explain layout design considerations needed to make a home-made PCB and it is not a complete guide about PCB manufacturing. Follow this guide at your own risk.
+	The aim of this guide is to provide a practical overview of fabricating a home-made Printed Circuit Board (PCB) using a UV exposure unit and chemical etching, rather than a Computer Numerical Control (CNC) milling machine. This guide covers the process from the completed layout design through to component assembly. It does not cover the layout design rules required for home-made PCB manufacturing, nor is it an exhaustive manufacturing manual. Please follow this guide at your own risk.
 \end{abstract}
 %
-\section{Photolite printing}
-The first step in PCB manufacturing with insolation machine and acid is printing the photolites with the negative of each layer, which have to be printed on acetate\footnote{If the photoliths printing is done at home, remember to use laser printing. Inkjet temperature is too much for normal acetate, if you do it the acetate will clog.}. They are used for protecting the copper layer when the copper plate is placed in the insolation machine.  
+\section{Photolith printing}
+The first step in PCB manufacturing using a UV exposure unit and chemical etchant is printing the photoliths with the negative image of each layer onto transparent film (acetate)\footnote{If printing photoliths at home, ensure you use transparency film designed for laser printing; standard acetate sheets will warp or melt inside a laser printer.}. These films protect the photoresist layer when the copper-clad board is placed in the exposure unit.
 
-An important detail is to print two photoliths of each layer and overlap them for a correct protection for the traces. This overlaping allows to have a opaque protection and can be made cutting the corners of one of each photoliths pair and unite each corner with cellophane. Then, unite three corners of one layer photoliths pair with the other pair. Make sure that, in both cases, they are correctly overlapped. In the \autoref{fig:photo} are shown the two overlapped photoliths for each layer of the two PCB examples.
+It is important to print two photoliths for each layer and overlay them to achieve adequate opacity for the circuit traces. This double-layer approach ensures that UV light does not bleed through the printed areas. The sheets can be aligned by trimming the corners of one transparency and fastening each corner with clear adhesive tape. Next, align and tape three corners of one layer's photolith pair to the other layer's pair. Ensure both sides are accurately registered. In \autoref{fig:photo}, the aligned, overlaid photolith pairs for both board layers are shown for two example designs.
 %
 \begin{figure}[H]
 	\centering
@@ -14,169 +14,171 @@ An important detail is to print two photoliths of each layer and overlap them fo
 	\subfigure[First example bottom layer]{\includegraphics[width=.49\textwidth, height= \photoHeight]{figures/photolith_board1_bottom.jpg}}
 	\subfigure[Second example top layer]{\includegraphics[width=.49\textwidth, height=\secondPhotoHeight]{figures/photolith_board2_top.jpg}}
 	\subfigure[Second example bottom layer]{\includegraphics[width=.49\textwidth, height=\secondPhotoHeight]{figures/photolith_board2_bottom.jpg}}
-	\caption{Two examples of double side PCBs photoliths}
+	\caption{Two examples of double-sided PCB photoliths}
 	\label{fig:photo}
 \end{figure}
 %
 %
-\section{Copper plate insolation}\label{section:insol}
-At this section, will be explained how to insolate the copper plate\footnote{Remember that the copper plate has to be photosensitive.} with the photoliths. First, if the copper plate is bigger than the desired printing size, it is necessary to use a shear machine to cut the copper plate and obtain the desired size. In the \autoref{fig:shear} it is shown the big copper plate placed in the shear machine, ready to be cut.
+\section{Copper plate UV exposure}\label{section:insol}
+This section explains how to expose the copper-clad board\footnote{Ensure that you use presensitised photoresist copper-clad laminate.} using the photolith masks. If the initial copper sheet is larger than the required board dimensions, a guillotine shear should first be used to trim it to size. In \autoref{fig:shear}, the copper board is shown placed in the shear, ready to be cut.
 %
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=.49\textwidth]{figures/process_cutting_shear.jpg}
-	\caption{Shear machine with the cooper plate prepared}
+	\caption{Guillotine shear with the copper board prepared}
 	\label{fig:shear}
 \end{figure}
 %
-After obtaining the copper plate with the desired size, it has to be inserted between the two photolith pairs and place it in the insolation machine like in the \autoref{fig:insol}. Make sure copper plate is correctly placed with the photoliths and centred in the insolation zone, in the second subfigure of the \autoref{fig:insol} it is zoomed in the collocation of the copper plate with the photoliths in the insolation zone.
+After obtaining a board of the desired dimensions, slide it between the two registered photolith pairs and place the assembly inside the exposure unit, as shown in \autoref{fig:insol}. Ensure that the copper board is centred within the exposure area and properly aligned with the photoliths. The second subfigure of \autoref{fig:insol} shows a close-up view of the board and masks in the exposure area.
 %
 \begin{figure}[H]
 	\centering
-	\subfigure[Global vision of the insolation machine]{\includegraphics[width=.49\textwidth, height=\insolHeight]{figures/process_insolation_machine_open.jpg}}
-	\subfigure[Zoom in on the PCB with the photolites]{\includegraphics[width=.49\textwidth, height=\insolHeight]{figures/process_insolation_pcb_placement.jpg}}
-	\caption{Insolation machine with the PCB and the photoliths ready}
+	\subfigure[General view of the exposure unit]{\includegraphics[width=.49\textwidth, height=\insolHeight]{figures/process_insolation_machine_open.jpg}}
+	\subfigure[Close-up of the PCB with the photoliths]{\includegraphics[width=.49\textwidth, height=\insolHeight]{figures/process_insolation_pcb_placement.jpg}}
+	\caption{UV exposure unit with the PCB and photoliths ready}
 	\label{fig:insol}
 \end{figure}
 %
-With all of this placed, the insolation machine has to be closed, locked, and turn on the black switch of the \autoref{fig:insolClosed}. This will empty the interior of the insolation machine, where the copper plate is placed. Now, use the blue buttons to set the insolation interval time that it is shown on the display. At this case, 150 seconds\footnote{It depends on the insolation machine and the age of the copper plate} is the time set. Press the green button ``START'' and the insolation process will start. This insolation time corrupts the protecting layer of the copper layer. During this time it is advisable to do the tasks of the \autoref{section:prep}.
+Once positioned, close and clamp the exposure unit lid, then turn on the vacuum pump switch shown in \autoref{fig:insolClosed}. This draws a vacuum inside the exposure chamber to press the transparencies firmly and evenly against the board surfaces. Next, use the timer buttons to configure the exposure interval on the display. In this case, 150 seconds\footnote{Optimal duration depends on the specific exposure unit and the age of the photosensitive board.} was selected. Press the green ``START'' button to begin the exposure process, which cures/degrades the exposed photoresist. During this waiting time, it is advisable to proceed with the chemical preparation described in \autoref{section:prep}.
 %
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=.49\textwidth]{figures/process_insolation_machine_closed.jpg}
-	\caption{Insolation machine during the insolation process}
+	\caption{Exposure unit during the UV exposure process}
 	\label{fig:insolClosed}
 \end{figure}
 %
-When this process ends, turn off the empty of the machine interior, take the copper plate and you will be able to see a really small difference in the colour between the protected and unprotected zones of the copper layers. Now, it is the turn of the tasks of the \autoref{section:soda}.
+When the timer completes, switch off the vacuum pump, release the clamps, and remove the copper board. A subtle contrast in colour will now be visible between the protected and exposed regions of the photoresist. Now proceed to the developing step in \autoref{section:soda}.
 %
-\section{Preparation of the caustic soda and the acid mix}\label{section:prep}
-During the insolation, it is a good idea to prepare the caustic soda and the acid mix. The material needed for the PCB cleaning is shown in the first subfigure of the \autoref{fig:prep}. 
+\section{Preparation of the developer and acid etchant}\label{section:prep}
+During the UV exposure, it is good practice to prepare the developer (caustic soda) and the etching solution. The materials and safety equipment required are shown in the first subfigure of \autoref{fig:prep}.
 
-For the caustic soda preparation it's only necessary a container and the caustic soda\footnote{What a surprise!}. The brown liquid shown in the second subfigure of the \autoref{fig:prep} is relative to this caustic soda because it has been reused several times.
+Preparing the caustic soda solution requires only a suitable plastic container and sodium hydroxide dissolved in water\footnote{Always add the chemicals to water, never water to concentrated chemical crystals!}. The dark tint in the container shown in the second subfigure of \autoref{fig:prep} is because this developer batch has been reused several times.
 
-In the case of the acid mix it is a bit more complex and it can not be reused. This transparent mix ``can'' be seen in the second subfigure of the \autoref{fig:prep} and it has the next admixtures with its ratio\footnote{Remember to wear gloves and use an air extractor and a security screen}:
+The acid etching bath, on the other hand, is a stronger chemical blend and must not be stored long-term for repeated use. This transparent solution can be seen in the second subfigure of \autoref{fig:prep} and has the following composition by volume\footnote{Always wear protective nitrile gloves, safety goggles, and work in a well-ventilated area or fume cupboard}:
 \begin{itemize}
-	\item Water $\Rightarrow$ 15\%
-	\item Hydrogen peroxide $\Rightarrow$ 30\%
-	\item Hydrochloric acid at 36\% $\Rightarrow$ 15\%
+	\item Water $\Rightarrow$ 55\%
+	\item Hydrogen peroxide ($\text{H}_2\text{O}_2$) $\Rightarrow$ 30\%
+	\item Hydrochloric acid ($\text{HCl}$) at 36\% $\Rightarrow$ 15\%
 \end{itemize}
 %
 \begin{figure}[H]
 	\centering
-	\subfigure[Material needed for the PCB cleaning]{\includegraphics[width=.49\textwidth]{figures/process_chemicals_materials.jpg}}
-	\subfigure[soda and acid containers prepared]{\includegraphics[width=.49\textwidth]{figures/process_chemicals_containers.jpg}}
-	\caption{Setup of the soda and acid containers for the PCB cleaning}
+	\subfigure[Equipment and materials required for chemical processing]{\includegraphics[width=.49\textwidth]{figures/process_chemicals_materials.jpg}}
+	\subfigure[Developer and acid containers prepared]{\includegraphics[width=.49\textwidth]{figures/process_chemicals_containers.jpg}}
+	\caption{Setup of the developer and etching containers for PCB processing}
 	\label{fig:prep}
 \end{figure}
 %
-\section{Caustic soda cleaning}\label{section:soda}
-Coming from the \autoref{section:insol} now the copper plate has to be introduced in the container prepared with caustic soda and we have to move it slowly in the soda with soft tweezers, being careful about scratching the copper layers.
+\section{Photoresist developing (caustic soda)}\label{section:soda}
+Following the UV exposure described in \autoref{section:insol}, the board is immersed in the caustic soda developer bath. Agitate the board gently using soft plastic tweezers, taking care not to scratch the delicate photoresist layer.
 %
 \begin{figure}[H]
 	\centering
-	\subfigure[Global vision of the insolation machine]{\includegraphics[width=.49\textwidth, height=\insolHeight]{figures/process_soda_immersion.jpg}}
-	\subfigure[Zoom in the PCB with the photolites]{\includegraphics[width=.49\textwidth, height=\insolHeight]{figures/process_soda_detail.jpg}}
-	\caption{Insolation machine with the PCB and the photolites ready}
+	\subfigure[Board immersed in the developer solution]{\includegraphics[width=.49\textwidth, height=\insolHeight]{figures/process_soda_immersion.jpg}}
+	\subfigure[Detail of the board developing]{\includegraphics[width=.49\textwidth, height=\insolHeight]{figures/process_soda_detail.jpg}}
+	\caption{Developing the exposed photoresist in the caustic soda solution}
 	\label{fig:soda}
 \end{figure}
 %
-The copper plate will be ready for taking it out of the caustic soda when its appearance seems like the copper plate shown in the \autoref{fig:aftersoda}, all the footprints and traces have to be well defined. The dark zones keep the copper protector and the other zones no longer have this protector.
+The board should be removed from the developer once the tracks and pads appear sharply defined, as shown in \autoref{fig:aftersoda}. The dark areas retain the protective photoresist, while the exposed areas reveal the bare copper underneath.
 
-Now, both layers have to be cleaned with water and paper to delete the caustic soda that remains on the surface of both layers. It needs to be dried with paper after this.
+Immediately rinse both sides of the board thoroughly under running water to neutralise and wash away any remaining caustic soda, then dry the board with absorbent paper towels.
 %
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=.7\textwidth]{figures/pcb_result_after_soda.jpg}
-	\caption{PCB view after soda cleaning}
+	\caption{PCB appearance after developing in caustic soda}
 	\label{fig:aftersoda}
 \end{figure}
 %
 %
-\section{Acid cleaning}\label{section:acid}
-The process with the acid mix is similar to caustic soda cleaning. Introduce the copper plate in the container with the acid mix and move it using tweezers or tilting the container\footnote{Be careful with the acid mix!} as shown in the \autoref{fig:acid}. 
+\section{Acid etching}\label{section:acid}
+The etching procedure is similar to the developing step. Immerse the copper board into the tray containing the acid solution and agitate it gently using plastic tweezers or by rocking the tray smoothly\footnote{Exercise extreme caution with the acid mixture; work under an extraction hood!}, as illustrated in \autoref{fig:acid}.
 %
 \begin{figure}[H]
 	\centering
-	\subfigure[Start of the copper cleaning with acid]{\includegraphics[width=.49\textwidth, height=\acidHeight]{figures/process_etching_start.jpg}}
-	\subfigure[Moving the PCB in the acid]{\includegraphics[width=.49\textwidth, height=\acidHeight]{figures/process_etching_progress.jpg}}
-	\subfigure[End of the PCB copper cleaning with acid]{\includegraphics[width=.49\textwidth, height=\acidHeight]{figures/process_etching_complete.png}}
-	\caption{PCB acid cleaning}
+	\subfigure[Start of copper etching in acid]{\includegraphics[width=.49\textwidth, height=\acidHeight]{figures/process_etching_start.jpg}}
+	\subfigure[Agitating the board during etching]{\includegraphics[width=.49\textwidth, height=\acidHeight]{figures/process_etching_progress.jpg}}
+	\subfigure[Completed chemical etching of the copper]{\includegraphics[width=.49\textwidth, height=\acidHeight]{figures/process_etching_complete.png}}
+	\caption{PCB acid etching process}
 	\label{fig:acid}
 \end{figure}
 %
-The admixtures ratio described in the \autoref{section:prep} is a fast mix, so you have to be moving all the time the copper plate until it seems similar to the PCBs shown in the \autoref{fig:pcbs}. It is really important to be careful with the tiny details and do not exceed the time of the copper plate in the acid mix.
+The chemical proportions described in \autoref{section:prep} create a rapid, exothermic reaction. Keep the board moving continuously until all exposed copper has completely dissolved, matching the appearance shown in \autoref{fig:pcbs}. Inspect fine track details closely and do not leave the board in the acid longer than necessary, as over-etching will undercut traces.
 
-After take it out of the acid mix, clean the copper plate with abundant water and dry it with some paper. The result should seem like the two sides of two PCBs of the \autoref{fig:pcbs}.
+After removing the board from the etching solution, rinse it under copious running water and pat dry with paper towels. The etched board should resemble the top and bottom sides of the finished boards shown in \autoref{fig:pcbs}.
 %
 \begin{figure}[H]
 	\centering
-	\subfigure[Top view]{\includegraphics[width=.49\textwidth, height=\pcbsHeight]{figures/pcb_result_etched_top.jpg}}
-	\subfigure[Bottom view]{\includegraphics[width=.49\textwidth, height=\pcbsHeight]{figures/pcb_result_etched_bottom.jpg}}
-	\caption{Top and bottom view of a pair of finished PCBs}
+	\subfigure[Top layer view]{\includegraphics[width=.49\textwidth, height=\pcbsHeight]{figures/pcb_result_etched_top.jpg}}
+	\subfigure[Bottom layer view]{\includegraphics[width=.49\textwidth, height=\pcbsHeight]{figures/pcb_result_etched_bottom.jpg}}
+	\caption{Top and bottom views of a pair of etched PCBs}
 	\label{fig:pcbs}
 \end{figure}
 %
-Whereas that caustic soda can be reused several times, the acid mix has to be stored in a container suitable for this purpose and removed by some company able to do it. A container example is shown in the \autoref{fig:containers}.
+Whereas the caustic soda developer can be reused several times, spent acid mixture must be stored in an approved chemical waste container, as shown in \autoref{fig:containers}, and collected by an authorised hazardous waste disposal contractor. Never pour etchant down standard municipal drains.
 %
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=.49\textwidth]{figures/process_waste_containers.jpg}
-	\caption{Acid residues containers}
+	\caption{Hazardous chemical waste storage containers}
 	\label{fig:containers}
 \end{figure}
 %
 %
-\section{Post-processing}
+\section{Post-processing and drilling}
 %
-Good job! If you have reached this point you already have a beautiful home-made PCB. Now, it is time to adjust more the size of this PCB, if the previous use of the shear machine has not reached a desirable quality grade. The shear machine can used again as shown in the \autoref{fig:postciz} or use a Dremel with a suitable cut disk\footnote{Remember to use protection gloves and glasses}.
+Congratulations! Having reached this stage, you now have an etched, home-made PCB. It is now time to trim the board perimeter accurately if the initial cut did not achieve the required tolerances. You can use the guillotine shear once more, as depicted in \autoref{fig:postciz}, or use a rotary multi-tool (e.g. Dremel) fitted with a cutting disc\footnote{Always wear protective gloves, safety glasses, and a dust mask when cutting or drilling FR4 boards}.
 %
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=.49\textwidth]{figures/process_cutting_post_etching.jpg}
-	\caption{Shear machine with the PCB finished placed}
-\label{fig:postciz}
+	\caption{Trimming the finished PCB using the guillotine shear}
+	\label{fig:postciz}
 \end{figure}
 %
-Then, clean the PCB with acetone to clean the copper protection remains. Furthermore, it is usual to have to do some drills in the PCB. It can be made for Through Hole Technology (THT) components, vias or restraint holes, among others. With this on mind, it is a good idea to use a fixed vertical Dremel with a suitable drill diameter as shown in the \autoref{fig:taladrico}. It is recommendable to use some material as wood as PCB support in order to not scratch the PCB traces. In the \autoref{fig:drill} is shown four team members hard drilling a PCB using this method.
+Next, clean the board with acetone or isopropyl alcohol (IPA) to strip away the remaining photoresist mask from the copper tracks. 
+
+The board must then be drilled for through-hole technology (THT) component leads, vias, and mounting holes. For this step, it is best to use a vertical drill press stand with a Dremel tool and appropriately sized solid carbide drill bits, as shown in \autoref{fig:taladrico}. A piece of scrap wood should be placed beneath the PCB to support the board cleanly and avoid chipping or tearing tracks on the exit side. \autoref{fig:drill} shows team members manually drilling boards using this setup.
 %
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=.49\textwidth]{figures/process_drilling_setup.jpg}
-	\caption{PCB placement for the drilling with a fixed Dremel}
+	\caption{PCB positioned for drilling on a vertical drill stand}
 	\label{fig:taladrico}
 \end{figure}
 %
 %
 \begin{figure}[H]
 	\centering
-	\subfigure[Mateo PCB super-drilling ]{\includegraphics[width=.49\textwidth, height=\taladroHeight]{figures/process_drilling_team_mateo.jpg}}
-	\subfigure[Elena PCB extra-drilling]{\includegraphics[width=.49\textwidth, height=\taladroHeight]{figures/process_drilling_team_elena.jpg}}
-	\subfigure[Miguel hyper-drilling]{\includegraphics[width=.49\textwidth, height=\taladroHeight]{figures/process_drilling_team_miguel.jpg}}
-	\subfigure[Fer flower-drilling]{\includegraphics[width=.49\textwidth, height=\taladroHeight]{figures/process_drilling_team_fer.jpg}}
-	\caption{Drilling examples with a fixed Dremel}
+	\subfigure[Mateo drilling through-holes]{\includegraphics[width=.49\textwidth, height=\taladroHeight]{figures/process_drilling_team_mateo.jpg}}
+	\subfigure[Elena precision drilling]{\includegraphics[width=.49\textwidth, height=\taladroHeight]{figures/process_drilling_team_elena.jpg}}
+	\subfigure[Miguel drilling vias]{\includegraphics[width=.49\textwidth, height=\taladroHeight]{figures/process_drilling_team_miguel.jpg}}
+	\subfigure[Fernando drilling mounting holes]{\includegraphics[width=.49\textwidth, height=\taladroHeight]{figures/process_drilling_team_fer.jpg}}
+	\caption{Examples of manual drilling using a vertical drill stand}
 	\label{fig:drill}
 \end{figure}
 %
-When this process is finished the PCB can seem like the PCB shown in the \autoref{fig:agujeritos}, in which only two diameters have been necessary.
+When the drilling stage is complete, the board should resemble the example in \autoref{fig:agujeritos}, where only two drill diameters were needed.
 %
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=.49\textwidth]{figures/pcb_result_drilled_holes.jpg}
-	\caption{PCB drilled view}
+	\caption{Drilled PCB ready for assembly}
 	\label{fig:agujeritos}
 \end{figure}
 %
 %
-\section{Soldering}
+\section{Soldering and assembly}
 %
-After aaaaaaaall this steps only have to sold the components on the PCB. At this case, the components used in the PCBs of the \autoref{fig:pcbsmain} are THT and Surface Mounting Device (SMD). Remember using flux is recommendable in both cases. To end this long adventure use a special spray or transparent nail polish\footnote{There is some special sprays that can be used before solding because they allows to sold even with it} to protect te copper and avoi copper rusting.
+After completing the fabrication steps, the final stage is to solder the components onto the board. In this project, the components mounted on the boards shown in \autoref{fig:pcbsmain} include both surface-mount devices (SMD) and through-hole technology (THT) packages. Applying flux is highly recommended for both soldering types to promote proper solder wetting. To complete the assembly and protect the exposed copper against oxidation, apply a protective conformal lacquer or transparent solder-through protective varnish\footnote{Special solder-through flux sprays can be applied prior to soldering to protect the tracks whilst remaining solderable}.
 %
 \begin{figure}[H]
 	\centering
-	\subfigure[Solded PCB with SMD components]{\includegraphics[width=.7\textwidth]{figures/pcb_result_soldered_smd.jpg}}
-	\subfigure[Solded PCB with THT components]{\includegraphics[width=.49\textwidth, height=\morepcbsHeight]{figures/pcb_result_soldered_tht.jpg}}
-	\subfigure[Assembled PCB with THT components]{\includegraphics[width=.49\textwidth, height=\morepcbsHeight]{figures/pcb_result_assembled_tht.jpg}}
-	\caption{Views of PCB solded and assembled with SMD and THT components}
+	\subfigure[Soldered PCB with SMD components]{\includegraphics[width=.7\textwidth]{figures/pcb_result_soldered_smd.jpg}}
+	\subfigure[Soldered PCB with THT components]{\includegraphics[width=.49\textwidth, height=\morepcbsHeight]{figures/pcb_result_soldered_tht.jpg}}
+	\subfigure[Fully assembled PCB with THT components]{\includegraphics[width=.49\textwidth, height=\morepcbsHeight]{figures/pcb_result_assembled_tht.jpg}}
+	\caption{Views of soldered and assembled PCBs with SMD and THT components}
 	\label{fig:pcbsmain}
 \end{figure}
